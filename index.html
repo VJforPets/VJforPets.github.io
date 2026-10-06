@@ -1,231 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#050505">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050505">
 
-  <title>VJforPets | Mobile Grooming</title>
+    <title>VJforPets | Mobile Grooming</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at top, #29200f 0%, #0b0b0b 32%, #050505 75%);
-      color: white;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
-                   "Helvetica Neue", Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-    }
+        html, body {
+            min-height: 100%;
+        }
 
-    .page {
-      width: 100%;
-      max-width: 480px;
-      min-height: 100vh;
-      padding: 45px 22px 35px;
-      text-align: center;
-    }
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(
+                    circle at top,
+                    #29200f 0%,
+                    #0b0b0b 32%,
+                    #050505 75%
+                );
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont,
+                         "SF Pro Display", "Helvetica Neue",
+                         Arial, sans-serif;
+        }
 
-    .logo {
-      width: 115px;
-      height: 115px;
-      margin: 0 auto 18px;
-      border-radius: 50%;
-      border: 1px solid rgba(212, 175, 55, 0.75);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #090909;
-      box-shadow: 0 0 35px rgba(212, 175, 55, 0.12);
-    }
+        .page {
+            width: 100%;
+            max-width: 480px;
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 48px 22px 40px;
+            text-align: center;
+        }
 
-    .logo span {
-      font-family: Georgia, serif;
-      font-size: 35px;
-      color: #d4af37;
-      letter-spacing: 2px;
-    }
+        .logo {
+            width: 115px;
+            height: 115px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            border: 1px solid rgba(212, 175, 55, 0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #090909;
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.12);
+        }
 
-    h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 38px;
-      font-weight: 500;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
+        .logo span {
+            font-family: Georgia, serif;
+            font-size: 35px;
+            color: #d4af37;
+            letter-spacing: 2px;
+        }
 
-    .gold {
-      color: #d4af37;
-    }
+        h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 38px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 9px;
+        }
 
-    .subtitle {
-      font-size: 15px;
-      color: #d1d1d1;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+        .gold {
+            color: #d4af37;
+        }
 
-    .location {
-      margin-top: 8px;
-      font-size: 14px;
-      color: #888;
-    }
+        .subtitle {
+            font-size: 14px;
+            color: #d1d1d1;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-    .line {
-      width: 55px;
-      height: 1px;
-      background: #d4af37;
-      margin: 25px auto;
-    }
+        .location {
+            margin-top: 9px;
+            font-size: 14px;
+            color: #888888;
+        }
 
-    .description {
-      color: #bcbcbc;
-      font-size: 15px;
-      line-height: 1.6;
-      margin: 0 auto 28px;
-      max-width: 350px;
-    }
+        .line {
+            width: 55px;
+            height: 1px;
+            background: #d4af37;
+            margin: 26px auto;
+        }
 
-    .main-button,
-    .button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      border-radius: 16px;
-      min-height: 58px;
-      margin-bottom: 13px;
-      font-size: 16px;
-      font-weight: 600;
-      transition: transform 0.15s ease;
-    }
+        .description {
+            color: #bcbcbc;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0 auto 30px;
+            max-width: 350px;
+        }
 
-    .main-button:active,
-    .button:active {
-      transform: scale(0.97);
-    }
+        .main-button,
+        .button {
+            width: 100%;
+            min-height: 58px;
+            margin-bottom: 13px;
+            padding: 16px 18px;
+            border-radius: 16px;
 
-    .main-button {
-      background: linear-gradient(135deg, #e2c05c, #b78b22);
-      color: #080808;
-      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.16);
-    }
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 11px;
 
-    .button {
-      color: white;
-      background: rgba(255, 255, 255, 0.055);
-      border: 1px solid rgba(255, 255, 255, 0.11);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
 
-    .button span,
-    .main-button span {
-      margin-right: 9px;
-      font-size: 19px;
-    }
+            transition: transform 0.15s ease;
+        }
 
-    .section {
-      margin-top: 35px;
-      padding: 23px 18px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.035);
-      border: 1px solid rgba(212,175,55,0.15);
-    }
+        .main-button:active,
+        .button:active {
+            transform: scale(0.97);
+        }
 
-    .section h2 {
-      color: #d4af37;
-      font-family: Georgia, serif;
-      font-size: 20px;
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
+        .main-button {
+            background: linear-gradient(
+                135deg,
+                #e2c05c,
+                #b78b22
+            );
+            color: #080808;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.16);
+        }
 
-    .section p {
-      color: #aaa;
-      font-size: 14px;
-      line-height: 1.6;
-    }
+        .button {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.055);
+            border: 1px solid rgba(255, 255, 255, 0.11);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
 
-    footer {
-      margin-top: 35px;
-      color: #666;
-      font-size: 12px;
-      line-height: 1.7;
-    }
+        .icon {
+            font-size: 20px;
+        }
 
-    footer strong {
-      color: #aaa;
-      font-weight: 500;
-    }
-  </style>
+        .section {
+            margin-top: 40px;
+            padding: 26px 20px;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .section h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: #d4af37;
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 14px;
+        }
+
+        .section p {
+            color: #aaaaaa;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .mini-title {
+            margin-top: 32px;
+            color: #d4af37;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        footer {
+            margin-top: 35px;
+            color: #666666;
+            font-size: 12px;
+            line-height: 1.7;
+            padding-bottom: 20px;
+        }
+
+        footer strong {
+            color: #aaaaaa;
+            font-weight: 500;
+        }
+
+        @media (max-width: 380px) {
+            .page {
+                padding-left: 17px;
+                padding-right: 17px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <main class="page">
+<main class="page">
 
     <div class="logo">
-      <span>VJ</span>
+        <span>VJ</span>
     </div>
 
     <h1>VJ<span class="gold">forPets</span></h1>
 
-    <div class="subtitle">Luxury Mobile Grooming</div>
-    <div class="location">South Florida</div>
+    <div class="subtitle">
+        Luxury Mobile Grooming
+    </div>
+
+    <div class="location">
+        South Florida
+    </div>
 
     <div class="line"></div>
 
     <p class="description">
-      Premium grooming brought directly to your doorstep.
-      Personalized care, comfort and style for your pet.
+        Premium grooming brought directly to your doorstep.
+        Personalized care, comfort and style for your pet.
     </p>
 
-    <a class="main-button"
-       href="sms:+19546849794?&body=Hi%20VJforPets!%20I%20would%20like%20to%20book%20a%20grooming%20appointment.">
-      <span>✦</span>
-      Book an Appointment
+    <a
+        class="main-button"
+        href="sms:+19546849794?&body=Hi%20VJforPets!%20I%20would%20like%20to%20book%20a%20grooming%20appointment."
+    >
+        <span class="icon">✦</span>
+        Book an Appointment
     </a>
 
-    <a class="button" href="sms:+19546849794">
-      <span>💬</span>
-      Text Us
+    <a
+        class="button"
+        href="sms:+19546849794"
+    >
+        <span class="icon">💬</span>
+        Text Us
     </a>
 
-    <a class="button"
-       href="https://www.instagram.com/vjforpets"
-       target="_blank">
-      <span>◎</span>
-      Instagram · @vjforpets
+    <a
+        class="button"
+        href="https://www.instagram.com/vjforpets"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <span class="icon">◎</span>
+        Instagram · @vjforpets
     </a>
 
-    <a class="button" href="tel:+19546849794">
-      <span>☎</span>
-      Call VJforPets
+    <a
+        class="button"
+        href="tel:+19546849794"
+    >
+        <span class="icon">☎</span>
+        Call VJforPets
     </a>
 
     <section class="section">
-      <h2>Mobile Grooming</h2>
-      <p>
-        Professional grooming without the stressful trip to the salon.
-        We bring the grooming experience directly to you.
-      </p>
+        <h2>Mobile Grooming</h2>
+
+        <p>
+            Professional grooming without the stressful trip to the salon.
+            We bring the grooming experience directly to you.
+        </p>
     </section>
 
+    <div class="mini-title">
+        Luxury care · At your doorstep
+    </div>
+
     <footer>
-      <strong>VJforPets · Mobile Grooming</strong><br>
-      South Florida<br><br>
-      © 2026 VJforPets
+        <strong>VJforPets · Mobile Grooming</strong><br>
+        South Florida<br><br>
+        © 2026 VJforPets
     </footer>
 
-  </main>
+</main>
 
 </body>
 </html>
